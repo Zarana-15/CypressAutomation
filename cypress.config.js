@@ -6,7 +6,7 @@ module.exports = defineConfig({
   reporter: 'mochawesome',
   retries:{
     runMode:1,
-    openMode:2
+    openMode:1
   },
   e2e: {
     setupNodeEvents(on, config) {

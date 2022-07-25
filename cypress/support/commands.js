@@ -24,6 +24,17 @@ Cypress.Commands.add('selectProduct', (productName) => {
     })
 })
 
+Cypress.Commands.add("loginAPI", function(){
+    cy.request("POST", 
+    "https://rahulshettyacademy.com/api/ecom/auth/login",
+    {userEmail: "zaranadesai16@gmail.com", userPassword: "Zar15.rsa"}
+    ).then(function(response)
+    {
+        expect(response.status).to.eq(200)
+        Cypress.env("token",response.body.token);
+    })
+})
+
 
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
